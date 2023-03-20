@@ -1,4 +1,5 @@
 import "./index.scss";
+import { arrayIngredient } from "../utils/func";
 
 const Card = ({ drink }) => {
   return (
@@ -6,11 +7,7 @@ const Card = ({ drink }) => {
       <img src={drink.strDrinkThumb} alt="#" />
       <h2 className="Card__title-drink">{drink.strDrink}</h2>
       <ul>
-        <li>{drink.strIngredient1}</li>
-        <li>{drink.strIngredient2}</li>
-        <li>{drink.strIngredient3}</li>
-        <li>{drink.strIngredient4}</li>
-        <li>{drink.strIngredient5}</li>
+        {arrayIngredient(drink).map((item) => item !== null && <li>{item}</li>)}
       </ul>
     </div>
   );

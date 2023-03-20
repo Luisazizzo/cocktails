@@ -7,7 +7,7 @@ import Form from "./components/form";
 import "./App.scss";
 
 function App() {
-  const [searchInputValue, setSearchInputValue] = useState("");
+  const [searchInputValue, setSearchInputValue] = useState("a");
   const [cocktailList, setCocktailList] = useState([]);
   const [category, setCategory] = useState("Cocktail");
 

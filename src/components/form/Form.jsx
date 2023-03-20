@@ -1,21 +1,43 @@
 import "./index.scss";
 
 const Form = ({ setSearchInputValue, searchInputValue }) => {
-  const onHandle = (e) => {
-    setSearchInputValue(() => e.target.value);
-  };
+  const array = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
   return (
     <div className="Form">
-      <label>
-        Scrivi una letera, ti darò tutti i cocktails che iniziano con la lettera
-        da te scelta
-      </label>
-      <input
-        value={searchInputValue}
-        onChange={onHandle}
-        type="text"
-        placeholder="Srivi una lettera"
-      />
+      {array.map((item) => (
+        <p
+          className={searchInputValue === item && "active"}
+          onClick={() => setSearchInputValue(item)}
+        >
+          {item}
+        </p>
+      ))}
     </div>
   );
 };
