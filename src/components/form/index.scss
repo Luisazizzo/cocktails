@@ -1,0 +1,15 @@
+.Form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px;
+
+  input {
+    outline: none;
+    background-color: #fff;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+  }
+}

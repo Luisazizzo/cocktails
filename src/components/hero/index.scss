@@ -1,0 +1,45 @@
+@import "./../../styles/_variables.scss";
+
+.Hero {
+  position: relative;
+  .trasparent {
+    margin-top: 80px;
+    width: 100%;
+    height: 500px;
+    background-color: #00000072;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__img {
+    margin-top: 80px;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+  .category {
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%);
+    list-style: none;
+  }
+  .category li {
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.35s;
+    &:hover {
+      color: $primary-color;
+      transform: scale(1.1);
+    }
+  }
+  h2 {
+    font-size: 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
