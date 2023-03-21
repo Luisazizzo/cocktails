@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 @import "./../../styles/_variables.scss";
+@import "../../styles/mixins";
 
 .NavBar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include flex-container(row, space-between);
   padding: 20px 30px;
   position: fixed;
   width: 100%;
@@ -42,5 +41,14 @@
   }
   .face:hover {
     color: $primary-color;
+  }
+}
+
+@media screen and (max-width: 835px) {
+  .NavBar__list-nav {
+    gap: 10px;
+  }
+  .NavBar .social {
+    gap: 10px;
   }
 }

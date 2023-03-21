@@ -1,0 +1,67 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.SingleDrink {
+  color: #201f1f;
+  border-radius: 10px;
+  margin: 130px auto 20px auto;
+  width: 800px;
+  height: 500px;
+  background-color: #fff;
+  display: flex;
+  position: relative;
+  .close {
+    font-size: 25px;
+    position: absolute;
+
+    left: 10px;
+    cursor: pointer;
+  }
+  &__description {
+    margin: 30px;
+    @include flex-container(column, flex-start, center, 20px);
+  }
+  .ingredienti {
+    list-style: circle;
+  }
+  &__img img {
+    width: 300px;
+    height: 500px;
+    object-fit: cover;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .btn-carousel {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    & button {
+      background-color: $primary-color;
+      border: none;
+      font-weight: bold;
+      width: 150px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover {
+        background-color: #201f1f;
+        color: $primary-color;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 835px) {
+  .SingleDrink {
+    height: 550px;
+    width: 300px;
+    & img {
+      height: 550px;
+      width: 146px;
+    }
+    .btn-carousel button {
+      width: 86px;
+    }
+  }
+}

@@ -18,6 +18,9 @@
     object-fit: cover;
   }
   .category {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
     display: flex;
     gap: 30px;
     position: absolute;

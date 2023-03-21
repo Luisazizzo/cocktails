@@ -30,9 +30,10 @@ const Form = ({ setSearchInputValue, searchInputValue }) => {
   ];
   return (
     <div className="Form">
-      {array.map((item) => (
+      {array.map((item, i) => (
         <p
-          className={searchInputValue === item && "active"}
+          key={i}
+          className={searchInputValue === item ? "active" : null}
           onClick={() => setSearchInputValue(item)}
         >
           {item}

@@ -1,9 +1,7 @@
+@import "../../styles/mixins";
+
 .Form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
+  @include flex-container(row, center, center, 15px, wrap);
   margin: 20px;
 
   p {
