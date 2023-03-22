@@ -1,0 +1,53 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.Footer {
+  @include flex-container(row, space-between);
+  padding: 30px;
+  .newsletter {
+    display: flex;
+    flex-direction: column;
+    & input {
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+    }
+    & button {
+      padding: 8px;
+      border-radius: 6px;
+      background-color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      &:hover {
+        background-color: $primary-color;
+        color: #fff;
+      }
+    }
+  }
+  .contact,
+  .support {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #ffffffd2;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .socialFooter {
+    display: flex;
+    gap: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    .icon:hover {
+      color: $primary-color;
+    }
+  }
+}
+@media screen and (max-width: 835px) {
+  .Footer {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

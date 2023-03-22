@@ -1,18 +1,18 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const Hero = ({ setCategory }) => {
   const selectCategory = (value) => {
     setCategory(value);
   };
   return (
-    <div className="Hero">
-      <div className="trasparent"></div>
+    <div className={styles.Hero}>
+      <div className={styles.trasparent}></div>
       <img
-        className="Hero__img"
+        className={styles.Hero__img}
         src="https://www.tastingtable.com/img/gallery/11-cocktails-to-try-if-you-like-drinking-gin/l-intro-1659025591.jpg"
         alt="heroimage"
       />
-      <ul className="category">
+      <ul className={styles.category}>
         <li onClick={() => selectCategory("Ordinary Drink")}>Ordinary</li>
         <li onClick={() => selectCategory("Cocktail")}>Cocktail</li>
         <li onClick={() => selectCategory("Shake")}>Shake</li>

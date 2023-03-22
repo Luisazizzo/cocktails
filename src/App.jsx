@@ -5,6 +5,7 @@ import { GET } from "./components/utils/http";
 import { useState, useEffect } from "react";
 import Form from "./components/form";
 import SingleDrink from "./components/singleDrink";
+import Footer from "./components/footer";
 import "./App.scss";
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      {singleDrink ? (
+      {singleDrink.visible ? (
         <SingleDrink
           data={singleDrink.payload}
           setSingleDrink={setSingleDrink}
@@ -47,6 +48,7 @@ function App() {
           />
         </>
       )}
+      <Footer />
     </div>
   );
 }

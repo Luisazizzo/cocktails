@@ -11,8 +11,9 @@
   left: 0;
   backdrop-filter: blur(10px);
   z-index: 2;
+  border-bottom: 1px solid #ffffffaa;
 
-  &__list-nav {
+  .listNav {
     list-style: none;
     display: flex;
     gap: 30px;
@@ -20,13 +21,14 @@
     font-weight: bold;
   }
 
-  &__list-nav li {
+  .listNav li {
     &:hover {
       color: $primary-color;
     }
   }
 
-  &__title-app {
+  .titleApp {
+    margin-right: 95px;
     font-size: 30px;
     font-family: "Dancing Script", cursive;
   }
@@ -42,13 +44,27 @@
   .face:hover {
     color: $primary-color;
   }
+  .hamburger {
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+  }
 }
 
 @media screen and (max-width: 835px) {
-  .NavBar__list-nav {
-    gap: 10px;
-  }
-  .NavBar .social {
-    gap: 10px;
+  .NavBar {
+    .listNav {
+      display: none;
+    }
+    .social {
+      display: none;
+    }
+    .titleApp {
+      font-size: 40px;
+      margin: auto;
+    }
+    .hamburger {
+      display: block;
+    }
   }
 }

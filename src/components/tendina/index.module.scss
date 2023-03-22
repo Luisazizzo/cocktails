@@ -1,0 +1,30 @@
+@import "../../styles/mixins";
+
+.Tendina {
+  padding: 0px 70px 0px 10px;
+  width: 100%;
+  height: 88px;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: -2000px;
+  @include flex-container(row, space-between);
+  color: #000;
+  transition: all 0.35s;
+
+  .listNav {
+    list-style: none;
+    @include flex-container(row, flex-start, center, 20px);
+    cursor: pointer;
+  }
+  .socialHamburger {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 60px;
+  }
+  &.show {
+    left: 60px;
+  }
+}

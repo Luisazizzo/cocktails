@@ -1,4 +1,4 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const Form = ({ setSearchInputValue, searchInputValue }) => {
   const array = [
@@ -29,11 +29,11 @@ const Form = ({ setSearchInputValue, searchInputValue }) => {
     "z",
   ];
   return (
-    <div className="Form">
+    <div className={styles.Form}>
       {array.map((item, i) => (
         <p
           key={i}
-          className={searchInputValue === item ? "active" : null}
+          className={searchInputValue === item ? styles.active : null}
           onClick={() => setSearchInputValue(item)}
         >
           {item}

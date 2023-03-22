@@ -1,10 +1,10 @@
+import styles from "./index.module.scss";
 import Card from "../card";
 import { filteredList } from "../utils/func";
-import "./index.scss";
 
 const Content = ({ data, category, setSingleDrink }) => {
   return (
-    <div className="Content">
+    <div className={styles.Content}>
       {filteredList(data, "strCategory", category).map((drink, i) => (
         <Card setSingleDrink={setSingleDrink} drink={drink} key={i} />
       ))}
