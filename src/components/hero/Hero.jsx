@@ -1,9 +1,14 @@
 import styles from "./index.module.scss";
 
-const Hero = ({ setCategory }) => {
+const Hero = ({ setCategory, setFormPrenota }) => {
   const selectCategory = (value) => {
     setCategory(value);
   };
+
+  const openModalForm = () => {
+    setFormPrenota(true);
+  };
+
   return (
     <div className={styles.Hero}>
       <div className={styles.trasparent}></div>
@@ -26,6 +31,10 @@ const Hero = ({ setCategory }) => {
         <li onClick={() => selectCategory("Soft Drink")}>Soft Drink</li>
       </ul>
       <h2>Scegli tra le categorie</h2>
+      <div className={styles.button}>
+        <p>Prenota il tuo tavolo:</p>
+        <button onClick={openModalForm}>Prenota</button>
+      </div>
     </div>
   );
 };

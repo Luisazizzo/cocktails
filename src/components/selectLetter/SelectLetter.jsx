@@ -1,6 +1,6 @@
 import styles from "./index.module.scss";
 
-const Form = ({ setSearchInputValue, searchInputValue }) => {
+const SelectLetter = ({ setSelectLetterValue, selectLetterValue }) => {
   const array = [
     "a",
     "b",
@@ -29,12 +29,12 @@ const Form = ({ setSearchInputValue, searchInputValue }) => {
     "z",
   ];
   return (
-    <div className={styles.Form}>
+    <div className={styles.SelectLetter}>
       {array.map((item, i) => (
         <p
           key={i}
-          className={searchInputValue === item ? styles.active : null}
-          onClick={() => setSearchInputValue(item)}
+          className={selectLetterValue === item ? styles.active : null}
+          onClick={() => setSelectLetterValue(item)}
         >
           {item}
         </p>
@@ -43,4 +43,4 @@ const Form = ({ setSearchInputValue, searchInputValue }) => {
   );
 };
 
-export default Form;
+export default SelectLetter;

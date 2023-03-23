@@ -1,6 +1,6 @@
 @import "../../styles/mixins";
 
-.Form {
+.SelectLetter {
   @include flex-container(row, center, center, 15px, wrap);
   margin: 20px;
 

@@ -1,0 +1,18 @@
+.PopUp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 400px;
+  padding: 30px;
+  background-color: rgb(255, 183, 0);
+  color: #000;
+  border-radius: 6px;
+  box-shadow: 4px 4px 4px #fff;
+  p {
+    font-size: 20px;
+  }
+  p span {
+    font-weight: bold;
+  }
+}
