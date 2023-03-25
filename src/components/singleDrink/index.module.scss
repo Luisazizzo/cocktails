@@ -9,6 +9,7 @@
   height: 500px;
   background-color: #fff;
   display: flex;
+  justify-content: s;
   position: relative;
   overflow: hidden;
   .close {
@@ -19,14 +20,16 @@
     cursor: pointer;
   }
   .description {
+    text-align: center;
     margin: 30px;
-    @include flex-container(column, flex-start, center, 20px);
+    @include flex-container(column, center, center, 20px);
+    flex-grow: 1;
   }
   .ingredienti {
     list-style: circle;
   }
-  .img {
-    width: 300px;
+  .img img {
+    max-width: 300px;
     height: 500px;
     object-fit: cover;
     border-top-right-radius: 10px;
@@ -63,6 +66,7 @@
     }
     .carousel button {
       width: 86px;
+      border-radius: 6px;
     }
   }
 }

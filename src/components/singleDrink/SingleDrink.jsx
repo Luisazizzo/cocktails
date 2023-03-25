@@ -2,10 +2,27 @@ import { arrayIngredient } from "../utils/func";
 import { BiChevronLeftCircle } from "react-icons/bi";
 import styles from "./index.module.scss";
 
-const SingleDrink = ({ data, setSingleDrink }) => {
+const SingleDrink = ({ data, setSingleDrink, setIndice, cocktailList }) => {
   const closeSingleDrink = () => {
-    setSingleDrink(false);
+    setSingleDrink((prev) => ({
+      ...prev,
+      visible: false,
+    }));
   };
+
+  const nextIndex = () => {
+    setIndice((prev) => {
+      if (prev === cocktailList.length - 1) return prev;
+      else return prev + 1;
+    });
+  };
+  const previousIndex = () => {
+    setIndice((prev) => {
+      if (prev <= 0) return prev;
+      else return prev - 1;
+    });
+  };
+
   return (
     <div className={styles.SingleDrink}>
       <BiChevronLeftCircle
@@ -29,8 +46,8 @@ const SingleDrink = ({ data, setSingleDrink }) => {
         <img src={data.strDrinkThumb} alt="strDrinkThumb" />
       </div>
       <div className={styles.carousel}>
-        <button>Previous</button>
-        <button>Next</button>
+        <button onClick={previousIndex}>Previous</button>
+        <button onClick={nextIndex}>Next</button>
       </div>
     </div>
   );

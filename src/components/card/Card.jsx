@@ -1,11 +1,11 @@
 import styles from "./index.module.scss";
 import { arrayIngredient } from "../utils/func";
 
-const Card = ({ drink, setSingleDrink }) => {
+const Card = ({ drink, setSingleDrink, setIndice, index }) => {
   const openSingleDrink = () => {
+    setIndice(index);
     setSingleDrink((prev) => ({
       ...prev,
-      payload: drink,
       visible: true,
     }));
   };

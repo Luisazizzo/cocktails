@@ -1,4 +1,5 @@
 import NavBar from "./components/navBar";
+import { filteredList } from "./components/utils/func";
 import Hero from "./components/hero";
 import Content from "./components/content";
 import { GET } from "./components/utils/http";
@@ -11,6 +12,7 @@ import PopUp from "./components/popUp";
 import "./App.scss";
 
 function App() {
+  const [indice, setIndice] = useState(0);
   const [cognome, setCognome] = useState("");
   const [persone, setPersone] = useState("");
   const [data, setData] = useState("");
@@ -22,7 +24,7 @@ function App() {
   const [category, setCategory] = useState("Cocktail");
   const [singleDrink, setSingleDrink] = useState({
     visible: false,
-    payload: {},
+    payload: [],
   });
 
   const timeOut = () => {
@@ -48,20 +50,22 @@ function App() {
       <NavBar />
       {singleDrink.visible ? (
         <SingleDrink
-          data={singleDrink.payload}
+          cocktailList={filteredList(cocktailList, "strCategory", category)}
+          setIndice={setIndice}
+          data={filteredList(cocktailList, "strCategory", category)[indice]}
           setSingleDrink={setSingleDrink}
         />
       ) : (
         <>
-          {" "}
           <Hero setCategory={setCategory} setFormPrenota={setFormPrenota} />
           <SelectLetter
             selectLetterValue={selectLetterValue}
             setSelectLetterValue={setSelectLetterValue}
           />
           <Content
+            setIndice={setIndice}
             setSingleDrink={setSingleDrink}
-            data={cocktailList}
+            data={filteredList(cocktailList, "strCategory", category)}
             category={category}
           />
         </>
