@@ -6,7 +6,7 @@
     margin-top: 80px;
     width: 100%;
     height: 500px;
-    background-color: #00000072;
+    background-color: $ligth-black;
     position: absolute;
     top: 0;
     left: 0;
@@ -19,9 +19,8 @@
   }
   .category {
     width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-    display: flex;
+    @include flex-wrap(wrap);
+    @include justify-content(center);
     gap: 30px;
     position: absolute;
     top: 100px;
@@ -34,7 +33,7 @@
     font-weight: bold;
     transition: all 0.35s;
     &:hover {
-      color: $primary-color;
+      color: $gold;
       transform: scale(1.1);
     }
   }
@@ -46,8 +45,7 @@
     transform: translate(-50%);
   }
   .button {
-    display: flex;
-    align-items: center;
+    @include align-items(center);
     gap: 20px;
     font-size: 20px;
     position: absolute;
@@ -58,13 +56,13 @@
       padding: 10px 15px;
       border-radius: 6px;
       border: none;
-      background-color: #fff;
+      background-color: $white;
       font-weight: bold;
       cursor: pointer;
       transition: all 0.2s;
       &:hover {
-        color: #fff;
-        background-color: #000;
+        color: $white;
+        background-color: $black;
         transform: scale(1.1);
       }
     }

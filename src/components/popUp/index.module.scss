@@ -5,10 +5,10 @@
   transform: translate(-50%);
   width: 400px;
   padding: 30px;
-  background-color: rgb(255, 183, 0);
-  color: #000;
+  background-color: $gold;
+  color: $black;
   border-radius: 6px;
-  box-shadow: 4px 4px 4px #fff;
+  box-shadow: 4px 4px 4px $white;
   p {
     font-size: 20px;
   }

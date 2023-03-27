@@ -1,6 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
-@import "./../../styles/_variables.scss";
-@import "../../styles/mixins";
 
 .NavBar {
   @include flex-container(row, space-between);
@@ -11,7 +9,7 @@
   left: 0;
   backdrop-filter: blur(10px);
   z-index: 2;
-  border-bottom: 1px solid #ffffffaa;
+  border-bottom: 1px solid $light-white-2;
 
   .listNav {
     list-style: none;
@@ -23,7 +21,7 @@
 
   .listNav li {
     &:hover {
-      color: $primary-color;
+      color: $gold;
     }
   }
 
@@ -39,10 +37,10 @@
     cursor: pointer;
   }
   .insta:hover {
-    color: $primary-color;
+    color: $gold;
   }
   .face:hover {
-    color: $primary-color;
+    color: $gold;
   }
   .hamburger {
     font-size: 20px;
