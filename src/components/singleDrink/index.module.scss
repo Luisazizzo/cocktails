@@ -59,14 +59,24 @@
 @media screen and (max-width: 835px) {
   .SingleDrink {
     height: 550px;
-    width: 300px;
-    .img {
+    width: 600px;
+    .img img {
+      object-fit: cover;
       height: 550px;
-      width: 146px;
+      width: 300x;
     }
     .carousel button {
       width: 86px;
       border-radius: 6px;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .SingleDrink {
+    width: 80%;
+    flex-direction: column;
+    .img {
+      display: none;
     }
   }
 }

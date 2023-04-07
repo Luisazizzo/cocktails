@@ -5,6 +5,7 @@
   @include flex-container(row, space-between);
   padding: 30px;
   .newsletter {
+    gap: 10px;
     display: flex;
     flex-direction: column;
     & input {
