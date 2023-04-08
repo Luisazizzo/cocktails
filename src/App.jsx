@@ -10,6 +10,7 @@ import Footer from "./components/footer";
 import ModalForm from "./components/modalForm";
 import PopUp from "./components/popUp";
 import "./App.scss";
+import ErrorToast from "./components/errorToast";
 
 function App() {
   const [indice, setIndice] = useState(0);
@@ -19,8 +20,10 @@ function App() {
   const [ora, setOra] = useState("");
   const [popUp, setPopUp] = useState(false);
   const [formPrenota, setFormPrenota] = useState(false);
+  const [error, setError] = useState(null);
   const [selectLetterValue, setSelectLetterValue] = useState("a");
   const [cocktailList, setCocktailList] = useState([]);
+  const [loader, setLoader] = useState(false);
   const [category, setCategory] = useState("Cocktail");
   const [singleDrink, setSingleDrink] = useState({
     visible: false,
@@ -39,14 +42,21 @@ function App() {
 
   useEffect(() => {
     if (selectLetterValue !== "") {
-      GET("/search.php?f=" + selectLetterValue).then(({ drinks }) => {
-        setCocktailList(() => drinks);
+      setLoader(true);
+      GET("/search.php?f=" + selectLetterValue).then((data) => {
+        setLoader(false);
+        if (data.error) {
+          setError(data.error);
+        } else {
+          setCocktailList(() => data.drinks);
+        }
       });
     }
   }, [selectLetterValue]);
 
   return (
     <div className="App">
+      {error && <ErrorToast error={error} setError={setError} />}
       <NavBar />
       {singleDrink.visible ? (
         <SingleDrink
@@ -63,6 +73,7 @@ function App() {
             setSelectLetterValue={setSelectLetterValue}
           />
           <Content
+            loader={loader}
             setIndice={setIndice}
             setSingleDrink={setSingleDrink}
             data={filteredList(cocktailList, "strCategory", category)}
