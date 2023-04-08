@@ -48,6 +48,7 @@ function App() {
         if (data.error) {
           setError(data.error);
         } else {
+          setError(null);
           setCocktailList(() => data.drinks);
         }
       });
