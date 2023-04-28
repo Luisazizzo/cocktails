@@ -49,7 +49,7 @@ function App() {
           setError(data.error);
         } else {
           setError(null);
-          setCocktailList(() => data.drinks);
+          setCocktailList(() => (data.drinks ? data.drinks : []));
         }
       });
     }
@@ -78,7 +78,6 @@ function App() {
             setIndice={setIndice}
             setSingleDrink={setSingleDrink}
             data={filteredList(cocktailList, "strCategory", category)}
-            category={category}
           />
         </>
       )}
@@ -99,7 +98,7 @@ function App() {
         />
       )}
       {popUp && (
-        <PopUp setPopUp={setPopUp}>
+        <PopUp>
           <p>
             Grazie! <span>{cognome}</span>, il tuo tavolo è stato prenotato per
             giorno <span> {data.split("-").reverse().join("-")}</span>,alle ore:{" "}

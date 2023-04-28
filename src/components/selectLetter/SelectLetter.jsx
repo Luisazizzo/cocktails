@@ -28,6 +28,7 @@ const SelectLetter = ({ setSelectLetterValue, selectLetterValue }) => {
     "y",
     "z",
   ];
+
   return (
     <div className={styles.SelectLetter}>
       {array.map((item, i) => (
